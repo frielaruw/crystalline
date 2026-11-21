@@ -1,0 +1,18 @@
+[package]
+name = "crystalline-engine"
+version = "1.0.0"
+edition = "2021"
+
+[dependencies]
+serde = { version = "1.0.215", features = ["derive"] }
+serde_json = "1.0.133"
+rayon = "1.10.0"
+winreg = "0.52.0"
+sha2 = "0.10.8"
+chrono = { version = "0.4.38", default-features = false, features = ["clock", "std"] }
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+codegen-units = 1
+strip = true

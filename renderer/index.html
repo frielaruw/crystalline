@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:" />
+<title>Crystalline</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app">
+    <header id="titlebar">
+      <div class="tb-brand">
+        <svg class="tb-gem" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 4.5 8.5 12 22l7.5-13.5L12 2z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M4.5 8.5h15M12 2l-3 6.5L12 22l3-13.5L12 2z" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg>
+        <span class="tb-name">Crystalline</span>
+      </div>
+      <div class="tb-right">
+        <span id="tb-status" class="tb-status" hidden></span>
+        <span class="tb-ver">v1.1.0</span>
+        <button class="tb-btn" id="tb-min" title="Minimize" aria-label="Minimize window"><svg viewBox="0 0 12 12"><line x1="2" y1="6" x2="10" y2="6"/></svg></button>
+        <button class="tb-btn" id="tb-max" title="Maximize" aria-label="Maximize window"><svg viewBox="0 0 12 12"><rect x="2" y="2" width="8" height="8" rx="1"/></svg></button>
+        <button class="tb-btn tb-close" id="tb-close" title="Close" aria-label="Close window"><svg viewBox="0 0 12 12"><path d="M3 3l6 6M9 3l-6 6"/></svg></button>
+      </div>
+    </header>
+
+    <div id="shell">
+      <nav id="sidebar" aria-label="Main navigation">
+        <div class="nav-scroll" id="nav-scroll"></div>
+        <div class="nav-foot" id="nav-foot"></div>
+      </nav>
+      <main id="content" tabindex="-1">
+        <div id="boot" class="boot">
+          <div class="boot-gem"></div>
+          <div class="boot-text">Scanning system…</div>
+        </div>
+      </main>
+    </div>
+
+    <div id="toasts" aria-live="polite"></div>
+    <div id="modal-root"></div>
+  </div>
+  <script type="module" src="renderer.js"></script>
+</body>
+</html>
